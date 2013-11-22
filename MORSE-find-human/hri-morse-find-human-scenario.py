@@ -2,7 +2,7 @@ from morse.builder import *
 
 
 # Robot
-robot = Jido()
+robot = BasePR2()
 robot.translate(x=0.8, z=0.2)
 
 # Robot differential drive 
@@ -14,10 +14,10 @@ waypoint = Waypoint()
 robot.append(waypoint)
 
 # Human component
-human = Human()
+human = Victim()
 human.translate(x=-1.0, z=0.0)
-human.use_world_camera()
-human.disable_keyboard_control()
+# human.use_world_camera()
+# human.disable_keyboard_control()
 
 # Properties for the semantic camera
 human.properties(Object = True, Graspable = False, Label = "HUMAN")
