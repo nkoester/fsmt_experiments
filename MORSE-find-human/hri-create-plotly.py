@@ -2,6 +2,8 @@
 
 import csv
 import sys
+# If you installed plotly in your std prefix you may comment this line. 
+# To get plotly just execute: pip install plotly
 sys.path.append("/media/FSM-Lab/releases/precise/x64/lib/python2.7/site-packages")
 import plotly
 
