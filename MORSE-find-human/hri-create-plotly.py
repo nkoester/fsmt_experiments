@@ -22,10 +22,12 @@ with open(sys.argv[1], 'rb') as csvfile:
      for row in reader:
          x.append(row[3])
          y.append(row[2])
-
+	
 data = []
-data.append({'x':x,'y':y,'type':'bar','marker':{'color':colors[0]}})
+data.append({'x':x,'y':y})
 
-l={'xaxis':{"zeroline":False},'yaxis':{"zeroline":False},'showlegend':False}
+# l={'xaxis':{"zeroline":False},'yaxis':{"zeroline":False},'showlegend':False}
+
+l = {'width':500,'height':500,'showlegend':False,'autosize':False}
 
 py.plot(data,layout=l)
