@@ -5,12 +5,12 @@ import sys
 sys.path.append("/media/FSM-Lab/releases/precise/x64/lib/python2.7/site-packages")
 import plotly
 
-py = plotly.plotly(username='flier', key=sys.argv[2])
-colors = ['rgb(0,0,238)','rgb(67,67,67)','rgb(111,168,220)']
-
 if not len(sys.argv) > 2:
     print "No CSV file, or API Key given"
     sys.exit(1)
+
+py = plotly.plotly(username='flier', key=sys.argv[2])
+colors = ['rgb(0,0,238)','rgb(67,67,67)','rgb(111,168,220)']
 
 x = []
 y = []
