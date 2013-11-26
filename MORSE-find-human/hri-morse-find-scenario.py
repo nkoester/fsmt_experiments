@@ -35,7 +35,6 @@ robot.append(semantic)
 # Middlware output
 semantic.add_stream('ros')
 motion.add_stream('ros')
-waypoint.add_stream('ros')
 
 # Environment
 env = Environment('apartment')
