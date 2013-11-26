@@ -4,6 +4,7 @@ from morse.builder import *
 # Robot
 robot = BasePR2()
 robot.translate(x=0.8, z=0.2)
+robot.rotate(x=0.0, y=0.0, z=3.14)
 
 # Robot differential drive 
 motion = MotionVW()
@@ -14,10 +15,10 @@ waypoint = Waypoint()
 robot.append(waypoint)
 
 # Human component
-human = Victim()
+human = Human()
 human.translate(x=-1.0, z=0.0)
-# human.use_world_camera()
-# human.disable_keyboard_control()
+human.use_world_camera()
+human.disable_keyboard_control()
 
 # Properties for the semantic camera
 human.properties(Object = True, Graspable = False, Label = "HUMAN")
