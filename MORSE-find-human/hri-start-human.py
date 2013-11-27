@@ -1,3 +1,4 @@
-import subprocess
-
-p = subprocess.Popen(['rostopic', 'pub', '-1', '/robot/motion', 'geometry_msgs/Twist', "{linear: {x: .5}, angular: {z: .7}}"])
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("localhost", 4000))
+s.send("id1 human move (1.0, 1.6)\n")
