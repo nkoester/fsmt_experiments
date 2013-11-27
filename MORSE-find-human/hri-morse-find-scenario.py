@@ -43,9 +43,11 @@ semantic = SemanticCamera()
 semantic.translate(x=0.2, y=0.3, z=0.9)
 robot.append(semantic)
 
-# Middlware output
+# Middleware output
 semantic.add_stream('ros')
 motion.add_stream('ros')
+
+# Services
 human.add_service('socket')
 
 # Environment
