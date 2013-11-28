@@ -6,11 +6,8 @@ robot.translate(x=0.8, z=0.2)
 robot.rotate(x=0.0, y=0.0, z=3.14)
 
 # Robot differential drive actuator 
-motion = MotionVW()
-robot.append(motion)
-
-# Human motion actuator
-motion_human = MotionVW()
+motion_vw = MotionVW()
+robot.append(motion_vw)
 
 # Waypoint actuator
 waypoint = Waypoint()
@@ -36,7 +33,6 @@ human.translate(x=-1.0, z=0.0)
 human.use_world_camera()
 human.disable_keyboard_control()
 human.append(waypoint)
-human.append(motion_human)
 
 # Properties for the semantic camera
 human.properties(Object = True, Graspable = False, Label = "HUMAN")
@@ -53,12 +49,8 @@ robot.append(semantic)
 
 # Middleware output
 semantic.add_stream('ros')
-motion.add_stream('ros')
-motion_human.add_stream('ros')
+motion_vw.add_stream('ros')
 waypoint.add_stream('socket')
-
-# Services and interfaces
-human.add_service('socket')
 
 # Environment
 env = Environment('apartment')
