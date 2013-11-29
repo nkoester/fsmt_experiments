@@ -12,6 +12,9 @@ robot.append(motion_vw)
 # Waypoint actuator
 waypoint = Waypoint()
 
+# Pose sensor
+pose = Pose()
+
 # Adding objects
 box_blue = PassiveObject('props/objects','BlueToyTrashbin')
 box_blue.setgraspable()
@@ -33,9 +36,14 @@ human.translate(x=-1.0, z=0.0)
 human.use_world_camera()
 human.disable_keyboard_control()
 human.append(waypoint)
+human.append(pose)
 
 # Properties for the semantic camera
 human.properties(Object = True, Graspable = False, Label = "HUMAN")
+
+# Add a video stream
+video_cam = VideoCamera()
+# video_cam.translate(<x>, <y>, <z>)
 
 # Key controls
 # keyboard = Keyboard()
@@ -46,10 +54,13 @@ human.properties(Object = True, Graspable = False, Label = "HUMAN")
 semantic = SemanticCamera()
 semantic.translate(x=0.2, y=0.3, z=0.9)
 robot.append(semantic)
+robot.append(video_cam)
 
 # Middleware output
 semantic.add_stream('ros')
 motion_vw.add_stream('ros')
+pose.add_interface('ros')
+video_cam.add_stream('ros')
 waypoint.add_stream('socket')
 
 # Environment
