@@ -53,7 +53,7 @@ video_cam.rotate(y=-0.25)
 
 # Semantic camera
 semantic = SemanticCamera()
-semantic.translate(x=0.2, y=0.3, z=0.9)
+semantic.translate(x=0.0, y=0.0, z=1.2)
 robot.append(semantic)
 robot.append(video_cam)
 
