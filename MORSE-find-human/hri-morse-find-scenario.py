@@ -18,13 +18,13 @@ pose = Pose()
 # Adding objects
 box_blue = PassiveObject('props/objects','BlueToyTrashbin')
 box_blue.setgraspable()
-box_blue.translate(x=0.5, y=-3, z=0.0)
+box_blue.translate(x=0.5, y=-2.0, z=0.0)
 box_blue.rotate(z=0.2)
 
 box_pink = PassiveObject('props/objects','PinkToyTrashbin')
 box_pink.setgraspable()
-box_pink.translate(x=1.5, y=-3, z=0.0)
-box_pink.rotate(z=0.2)
+box_pink.translate(x=1.0, y=-2.0, z=0.0)
+box_pink.rotate(z=0.3)
 
 # Properties for the semantic camera
 box_blue.properties(Object = True, Graspable = False, Label = "BOX_BLUE")
@@ -59,11 +59,11 @@ robot.append(video_cam)
 # Middleware output
 semantic.add_stream('ros')
 motion_vw.add_stream('ros')
-pose.add_interface('ros')
 video_cam.add_stream('ros')
+pose.add_stream('socket')
 waypoint.add_stream('socket')
 
 # Environment
 env = Environment('apartment')
-env.place_camera([10.0, -10.0, 10.0])
+env.place_camera([10.0, -5.0, 10.0])
 env.aim_camera([1.0470, 0, 0.7854])
