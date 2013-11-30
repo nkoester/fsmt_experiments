@@ -4,7 +4,7 @@ import time
 from std_msgs.msg import String
 
 start = time.time()
-print "xpos,ypos,zpos,time"
+# print "xpos,ypos,zpos,time"
 
 def callback(msg):
     now = time.time()
@@ -16,7 +16,7 @@ def callback(msg):
         y = human_j[0]['position'][1]
         z = human_j[0]['position'][2]
         elapsed = now-start
-        print "%.3f,%.3f,%.3f,%.3f" % (x,y,z,elapsed)
+        print "%.3f, %.3f, %.3f, %.3f" % (x,y,z,elapsed)
 	
 rospy.init_node("hri_log_human")
 rospy.Subscriber("/robot/semantic", String, callback)
