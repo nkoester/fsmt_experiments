@@ -44,7 +44,7 @@ human.properties(Object = True, Graspable = False, Label = "HUMAN")
 # Add a video stream
 video_cam = VideoCamera()
 video_cam.translate(0.0, 0.0, 1.2)
-video_cam.rotate(y=-0.3)
+video_cam.rotate(y=-0.25)
 
 # Key controls
 # keyboard = Keyboard()

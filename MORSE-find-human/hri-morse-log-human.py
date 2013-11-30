@@ -17,7 +17,7 @@ def callback(msg):
         z = human_j[0]['position'][2]
         elapsed = now-start
         print "%.3f, %.3f, %.3f, %.3f" % (x,y,z,elapsed)
-	
+
 rospy.init_node("hri_log_human")
 rospy.Subscriber("/robot/semantic", String, callback)
 
