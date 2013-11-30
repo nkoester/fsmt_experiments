@@ -31,11 +31,11 @@ according to your needs. Otherwise, execute the following:
 7. python setup.py install --prefix=/opt/fsmt-base/
 8. cd /opt/fsmt-experiments
 9. git clone https://github.com/warp1337/fsmt_experiments.git .
-Optional, if you want to use/install MORSE/ROS
-  sh morse-setup.sh (MORSE only, GIT master), Press "y"
-  sh morse-setup.sh --ROS (MORSE and ROS, Groovy), Press "y"
+9a. Optionally, if you want to use/install MORSE and/or ROS
+  sh morse-setup.sh (MORSE only, from GIT master), Press "y"
+  sh morse-setup.sh --ROS (MORSE and ROS, "Groovy"), Press "y"
 10. cd DESIRED_EXPERIMENT
-11. export PATH=/opt/fsmt-base/:$PATH
+11. export PATH=/opt/fsmt-base/bin/:$PATH
 12. You may need to change the [environment] paths in the desired *.ini file depending on your installion
 13. fsmtiniparser -o DESIRED_EXPERIMENT.scxml DESIRED_EXPERIMENT.ini
   Example: fsminiparser -o hri-morse-find-scenario.scxml hri-morse-find-scenario.ini   
