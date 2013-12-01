@@ -24,7 +24,7 @@ according to your needs. Otherwise, execute the following:
 
 1. sudo mkdir -p /opt/fsmt-base/lib/python2.7/site-packages
 2. sudo mkdir -p /opt/fsmt-experiments
-3. sudo chown -R $USER /opt/fsmt-base && sudo chown -R /opt/fsmt-experiments
+3. sudo chown -R $USER /opt/fsmt-base && sudo chown -R $USER /opt/fsmt-experiments
 4. cd /opt/fsmt-base
 5. copy/checkout your FSMT version to /opt/fsmt
 6. export PYTHONPATH=/opt/fsmt-base/lib/python2.7/site-packages/:$PYTHONPATH
@@ -32,8 +32,8 @@ according to your needs. Otherwise, execute the following:
 8. cd /opt/fsmt-experiments
 9. git clone https://github.com/warp1337/fsmt_experiments.git .
 10. Optionally, if you want to use/install MORSE and/or ROS, otherwise continue with 13.
-11. sh morse-setup.sh (MORSE only, from GIT master), Press "y"
-12. sh morse-setup.sh --ROS (MORSE and ROS, "Groovy"), Press "y"
+11. sh bootstraps/morse-setup.sh (MORSE only, from GIT master), Press "y"
+12. sh bootstraps/morse-setup.sh --ROS (MORSE and ROS, "Groovy"), Press "y"
 13. cd DESIRED_EXPERIMENT
 14. export PATH=/opt/fsmt-base/bin/:$PATH
 15. You may need to change the [environment] paths in the desired *.ini file depending on your installion
