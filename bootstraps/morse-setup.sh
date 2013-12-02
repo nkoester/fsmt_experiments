@@ -74,7 +74,7 @@ echo "[ -f ${workspace}/.bashrc ] && source ${workspace}/.bashrc" >> ~/.bashrc
 source ${workspace}/.bashrc
 
 echo "Install MORSE (latest from git master branch)"
-cd ${workspace}/src && git clone git://github.com/laas/morse.git
+cd ${workspace}/src && git clone https://github.com/morse-simulator/morse.git
 wait $pypid && cd ${workspace}/src/morse && mkdir -p build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..
 make install
