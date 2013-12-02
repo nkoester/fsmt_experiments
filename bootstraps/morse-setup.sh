@@ -84,7 +84,7 @@ make install
 # ROS specific
 #
 
-if [ "$1" = "--ROS" ]; then
+if [ "$1" = "--WITHROS" ]; then
 
   echo "Install Python YAML w/ python3.3"
   wget -cq http://pyyaml.org/download/pyyaml/PyYAML-3.10.tar.gz
@@ -102,28 +102,30 @@ if [ "$1" = "--ROS" ]; then
   echo "Wait for background install to finish"
   wait
 
-  ubuntu_codename=$(lsb_release -cs)
-  [ "0" != "$?" ] && echo "[ERROR] lsb_release: not running Ubuntu ?" && exit 1
-  echo "Install ROS on ${ubuntu_codename} in /opt needs to sudo"
+  if [ "$2" = "--ROSDIST" ]; then
+  	ubuntu_codename=$(lsb_release -cs)
+  	[ "0" != "$?" ] && echo "[ERROR] lsb_release: not running Ubuntu ?" && exit 1
+  	echo "Install ROS on ${ubuntu_codename} in /opt needs to sudo"
 
-  sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list'
-  wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
-  sudo apt-get update
-  sudo apt-get install ros-groovy-desktop-full python-rosinstall git-cvs
+  	sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list'
+  	wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+  	sudo apt-get update
+  	sudo apt-get install ros-groovy-desktop-full python-rosinstall git-cvs
 
-  sudo rosdep init
-  rosdep update
+  	sudo rosdep init
+  	rosdep update
 
-  echo "[ -f /opt/ros/groovy/setup.bash ] && source /opt/ros/groovy/setup.bash" >> ${workspace}/.bashrc
+  	echo "[ -f /opt/ros/groovy/setup.bash ] && source /opt/ros/groovy/setup.bash" >> ${workspace}/.bashrc
+  fi
 
   echo "Install rospkg w/ python3.3"
-  cd ${workspace}/tmp && git clone git://github.com/ros/rospkg.git
+  cd ${workspace}/tmp && git clone https://github.com/ros/rospkg.git
   cd rospkg && git checkout 1.0.20
   ${workspace}/bin/python3.3 setup.py install
-  cd ${workspace}/tmp && git clone git://github.com/ros-infrastructure/catkin_pkg.git
+  cd ${workspace}/tmp && git clone https://github.com/ros-infrastructure/catkin_pkg.git
   cd catkin_pkg && git checkout 0.1.10
   ${workspace}/bin/python3.3 setup.py install
-  cd ${workspace}/tmp && git clone git://github.com/ros/catkin.git
+  cd ${workspace}/tmp && git clone https://github.com/ros/catkin.git
   cd catkin && git checkout 0.5.65
   ${workspace}/bin/python3.3 setup.py install
 
