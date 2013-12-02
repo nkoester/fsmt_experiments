@@ -33,7 +33,7 @@ according to your needs. Otherwise, execute the following:
 9. git clone https://github.com/warp1337/fsmt_experiments.git .
 10. Optionally, if you want to use/install MORSE and/or ROS, otherwise continue with 13.
 11. sh bootstraps/morse-setup.sh (MORSE only, from GIT master), Press "y"
-12. sh bootstraps/morse-setup.sh --ROS (MORSE and ROS, "Groovy"), Press "y"
+12. sh bootstraps/morse-setup.sh --WITHROS (MORSE-ROS dependencies only) and --ROSDIST (also install ROS from scratch) Press "y"
 13. cd DESIRED_EXPERIMENT
 14. export PATH=/opt/fsmt-base/bin/:$PATH
 15. You may need to change the [environment] paths in the desired *.ini file depending on your installion
