@@ -26,9 +26,9 @@ according to your needs. Otherwise, execute the following:
 2. sudo mkdir -p /opt/fsmt-experiments
 3. sudo chown -R $USER /opt/fsmt-base && sudo chown -R $USER /opt/fsmt-experiments
 4. cd /opt/fsmt-base
-5. copy/checkout your FSMT version to /opt/fsmt
+5. copy/checkout your FSMT version to /opt/fsmt-base/src
 6. export PYTHONPATH=/opt/fsmt-base/lib/python2.7/site-packages/:$PYTHONPATH
-7. python setup.py install --prefix=/opt/fsmt-base/
+7. cd /opt/fsmt-base/src && python setup.py install --prefix=/opt/fsmt-base/
 8. cd /opt/fsmt-experiments
 9. git clone https://github.com/warp1337/fsmt_experiments.git .
 10. Optionally, if you want to use/install MORSE and/or ROS, otherwise continue with 13.
