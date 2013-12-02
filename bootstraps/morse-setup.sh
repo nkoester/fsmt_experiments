@@ -3,7 +3,7 @@
 # Pierrick Koch - for morse.openrobots.org
 # one line easy install:
 #   mkdir ~/devel; cd ~/devel; wget http://pierriko.com/hanoi/setup.sh; sh setup.sh
-#
+# Edited by Florian Lier (linear install + ROS switch)
 
 echo "This script will install MORSE in your current location, if you want to install ROS too, please invoke it using: --ROS"
 
